@@ -1,0 +1,18 @@
+.nav-container {
+    background-color: #0075ff;
+    width: 100px;
+    height: 100vh;
+    color: white;
+    .nav-logo-container {
+        height: 70px;
+    }
+    .nav-items-container {
+        i {
+            color: #77b1fd;
+            margin-bottom: 20px;
+        }
+        .active {
+            color: white;
+        }
+    }
+}

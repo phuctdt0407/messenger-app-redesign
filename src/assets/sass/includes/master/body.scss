@@ -1,0 +1,51 @@
+body {
+    max-width: 1980px;
+    font-family: 'Open-sans' sans-serif;
+    margin: auto;
+    .wrapper {
+        width: 100%;
+        display: flex;
+    }
+    .content-container {
+        width: 100%;
+    }
+}
+
+input.search-input {
+    border: none;
+    font-size: 15px;
+    &:focus {
+        border: none;
+        box-shadow: none;
+        outline: none;
+        border-bottom: 1px solid black;
+    }
+}
+
+@font-face {
+    font-family: 'Open-sans';
+    font-display: auto;
+    src: url('../../../fonts/open-sans/OpenSans-Regular.ttf') format('.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background:transparent; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #dddee2; 
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #dddee2; 
+}

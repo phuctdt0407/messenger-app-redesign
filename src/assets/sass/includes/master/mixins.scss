@@ -1,0 +1,147 @@
+// Mixins
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin blockEllipsis($lines) {
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin transition($param...) {
+  -ms-transition: $param;
+  -o-transition: $param;
+  -moz-transition: $param;
+  -webkit-transition: $param;
+  transition: $param;
+}
+
+@mixin transform($param...) {
+  -ms-transform: $param;
+  -o-transform: $param;
+  -moz-transform: $param;
+  -webkit-transform: $param;
+  transform: $param;
+}
+
+@mixin border-radius($param) {
+  -webkit-border-radius: $param;
+  -moz-border-radius: $param;
+  border-radius: $param;
+}
+
+@mixin box-shadow($param...) {
+  -webkit-box-shadow: $param;
+  -moz-box-shadow: $param;
+  box-shadow: $param;
+}
+
+@mixin flex-column($param...) {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 $param;
+  flex: 0 0 $param;
+  max-width: $param;
+}
+
+@mixin center-content() {
+  position: absolute;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+
+@mixin mid-content() {
+  position: absolute;
+  left: 50%;
+  @include transform(translateX(-50%));
+}
+
+@mixin mid-center-content() {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  @include transform(translate(-50%, -50%));
+}
+
+@mixin animation($param...) {
+  animation: $param;
+  -webkit-animation: $param;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+// media query declarations
+// desktop first
+
+// Large devices (desktops, less than 1200px)
+@mixin for-small-desktops {
+  @media (max-width: 1199.98px) {
+    @content;
+  }
+}
+
+// Medium devices (tablets, less than 992px)
+@mixin for-tablets {
+  @media (max-width: 991.98px) {
+    @content;
+  }
+}
+
+// Small devices (landscape phones, less than 768px)
+@mixin for-landscape-phone {
+  @media (max-width: 767.98px) {
+    @content;
+  }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@mixin for-phone-only {
+  @media (max-width: 575.98px) {
+    @content;
+  }
+}
+
+// Extra small phone (portrait phones, less than 375px, exp: iPhone 5)
+@mixin for-small-phone {
+  @media (max-width: 374.98px) {
+    @content;
+  }
+}

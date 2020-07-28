@@ -1,0 +1,145 @@
+@import 'mixins';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+$font-family-sans-serif: 'Roboto', arial, sans-serif !default;
+$font-family-serif: 'Roboto Slab', arial, sans-serif !default;
+$font-family-monospace: "Roboto Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base: $font-family-sans-serif !default;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1440px,
+  xxxl: 1600px
+) !default;
+
+// stylelint-disable declaration-no-important
+$white:    #fff !default;
+$gray-100: #f5f5f5 !default;
+$gray-200: #ebebeb !default;
+$gray-300: #dedede !default;
+$gray-400: #bdbdbd !default;
+$gray-500: #ababab !default;
+$gray-600: #666666 !default;
+$gray-700: #454545 !default;
+$gray-800: #333333 !default;
+$gray-900: #212121 !default;
+$black:    #000 !default;
+
+$primary-color:#9A1553 !default;
+$warning-color: #DE5F3C !default;
+$error-color: #ed2f56 !default;
+$info-color: #394FA1 !default;
+$success-color: #279183 !default;
+
+$bg-error-light: #FDECEF !default;
+$bg-info-light: #E9ECF9 !default;
+$bg-success-light: #DFF6F3 !default;
+$bg-warning-light: #FDECE8 !default;
+$bg-widget: $white !default;
+$bg-navigator: $white !default;
+
+$primary:       $primary-color !default;
+$secondary:     #7a7a7a !default;
+$widget-header-color: $primary-color !default;
+$danger:        $error-color !default;
+$success:       $success-color !default;
+$info:          $info-color !default;
+$warning:       $warning-color !default;
+$error:         $error-color !default;
+$light:         $gray-100 !default;
+$dark:          $gray-800 !default;
+
+$theme-colors: () !default;
+
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-colors: map-merge(
+  (
+    "primary":    $primary,
+    "primary-dark": darken($primary, 15%),
+    "danger":     $danger,
+    "secondary":  $secondary,
+    "success":    $success,
+    "info":       $info,
+    "warning":    $warning,
+    "error":      $error,
+    "success-light":    $bg-success-light,
+    "info-light":       $bg-info-light,
+    "warning-light":    $bg-warning-light,
+    "error-light":      $bg-error-light,
+    "light":      $light,
+    "dark":       $dark,
+    "white":      $white
+  ),
+  $theme-colors
+);
+
+$border-radius:               4px !default;
+$border-width:                1px !default;
+$border-color:                $gray-300 !default;
+$rounded-pill:                50rem !default;
+
+$overflows: auto, hidden !default;
+$positions: static, relative, absolute, fixed, sticky !default;
+$zindex-sticky:                     1020 !default;
+$zindex-fixed:                      1030 !default;
+
+$font-weight-lighter:         lighter !default;
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-bold:            500 !default;
+$font-weight-bolder:          700 !default;
+
+$font-weight-base:            $font-weight-normal !default;
+$line-height-base:            1.5 !default;
+$font-size-base:              15px;
+
+$body-bg:                   $gray-300 !default;
+$body-color:                $gray-800 !default;
+$text-muted:                $gray-500 !default;
+$link-color:                $primary-color !default;
+
+// Darken percentage for links with `.text-*` class (e.g. `.text-success`)
+$emphasized-link-hover-darken-percentage: 15% !default;
+
+// Primary
+$primary-dark-color: darken($primary-color, $emphasized-link-hover-darken-percentage) !default;
+$primary-light-color: #ff248a !default;
+$primary-lighter-color: #ff73b4 !default;
+
+// Accent
+$accent-color:#323c62 !default;
+$accent-light-color: #6d7590 !default;
+
+// Button
+$primary-button-bg-color: #6d7590 !default;
+$primary-button-bg-hover-color: #515979 !default;
+$primary-button-bg-active-color: $accent-color !default;
+$primary-button-text-color: $white !default;
+
+$danger-button-bg-color: $danger !default;
+$danger-button-bg-hover-color: #c72847 !default;
+$danger-button-bg-active-color: #a1203a !default;
+$danger-button-text-color: $white !default;
+
+$success-button-bg-color: $success-color !default;
+$success-button-bg-hover-color: #188273 !default;
+$success-button-bg-active-color: #0f6f61 !default;
+$success-button-text-color: $white !default;
+
+$secondary-button-bg-color: $gray-600 !default;
+$secondary-button-bg-hover-color: #4d4d4d !default;
+$secondary-button-bg-active-color: $gray-800 !default;
+$secondary-button-text-color: $white !default;
+
+$compliance-task-button-bg-color: #847fbc;
+$delete-icon-color: $primary-button-bg-color;
+// Input
+$border-input-color: $gray-400 !default;
+
+//Perfect Scrollbar
+$scroll-bar-bg-color: $accent-light-color;
+$scroll-rail-bg-color: rgba($scroll-bar-bg-color, 0.2);

@@ -1,0 +1,12 @@
+doctype html
+html(lang="en" class="en")
+	head
+		- var pageSection="homePage"
+		include partials/master/head.pug
+
+	body
+		div.wrapper
+			include partials/master/navbar.pug
+			div.content-container.d-flex.flex-column
+				include partials/master/header.pug
+				include partials/master/content.pug
