@@ -1,2 +1,2 @@
-# messager-app-redesign
+# messenger-app-redesign
 Learn pugjs
